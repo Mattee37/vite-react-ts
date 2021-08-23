@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import styled from "@emotion/styled";
 import "./App.css";
 
 import ComponenteHijo from "./components/ComponenteHijo";
@@ -10,34 +11,60 @@ interface Components {
   key: number;
 }
 
+const StyledButton = styled.button`
+  grid-column: span 3;
+  width: 31.6%;
+  align-self: center;
+  justify-self: center;
+  background: rgb(5, 36, 214);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 10px;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background: rgb(0, 18, 119);
+  }
+`;
+
+const Message = styled.span`
+  font-size: 30px;
+  grid-column: span 3;
+  align-self: center;
+  justify-self: center;
+`;
+
 const App: FC = () => {
   console.log("App renderizada");
 
-  const [components, setComponents] = useState<Array<Components>>([
-    { texto: "Contador 1", adderValue: 1, key: 1 },
-    { texto: "Contador 2", adderValue: 2, key: 2 },
-    { texto: "Contador 3", adderValue: 3, key: 3 },
-  ]);
+  const [components, setComponents] = useState<Array<Components>>([]);
 
   const addComponent = () => {
     const randomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+    const arrayLength = components.length + 1;
     setComponents(
       components.concat({
-        texto: "Contador " + randomNumber,
+        texto: `Contador ${arrayLength}`,
         adderValue: randomNumber,
-        key: randomNumber + randomNumber,
+        key: arrayLength,
       })
     );
-    console.log(components);
   };
 
   return (
     <div className="grid">
       <Encabezado />
-      <button onClick={addComponent}>Agregar componente!</button>
-      {components.map(({ texto, adderValue, key }) => (
-        <ComponenteHijo texto={texto} adderValue={adderValue} key={key} />
-      ))}
+      <StyledButton onClick={addComponent}>Agregar contador!</StyledButton>
+      {components.length !== 0 ? (
+        components.map(({ texto, adderValue, key }) => (
+          <ComponenteHijo texto={texto} adderValue={adderValue} key={key} />
+        ))
+      ) : (
+        <Message>Aún no hay contadores!</Message>
+      )}
     </div>
   );
 };

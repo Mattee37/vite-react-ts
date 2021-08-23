@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -15,6 +10,11 @@ body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   background: #2c3553;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .grid {
@@ -41,7 +41,6 @@ body {
 }
 
 .boton {
-  background: rgb(5, 36, 214);
   color: #fff;
   width: 100%;
   border: none;
@@ -52,8 +51,20 @@ body {
   transition: 0.3s ease all;
 }
 
-.boton:hover {
+.botonAdd {
+  background: rgb(5, 36, 214);
+}
+
+.botonAdd:hover {
   background: rgb(0, 18, 119);
+}
+
+.botonRemove {
+  background: rgb(226, 39, 39);
+}
+
+.botonRemove:hover {
+  background: rgb(133, 23, 23);
 }
 
 @media (prefers-reduced-motion: no-preference) {
