@@ -9,6 +9,7 @@ interface Components {
   texto: string;
   adderValue: number;
   key: number;
+  id: number;
 }
 
 const StyledButton = styled.button`
@@ -50,6 +51,7 @@ const App: FC = () => {
         texto: `Contador ${arrayLength}`,
         adderValue: randomNumber,
         key: arrayLength,
+        id: arrayLength,
       })
     );
   };
@@ -60,7 +62,12 @@ const App: FC = () => {
       <StyledButton onClick={addComponent}>Agregar contador!</StyledButton>
       {components.length !== 0 ? (
         components.map(({ texto, adderValue, key }) => (
-          <ComponenteHijo texto={texto} adderValue={adderValue} key={key} />
+          <ComponenteHijo
+            texto={texto}
+            adderValue={adderValue}
+            key={key}
+            id={key}
+          />
         ))
       ) : (
         <Message>Aún no hay contadores!</Message>

@@ -3,9 +3,15 @@ import React, { FC, useState } from "react";
 interface Props {
   texto: string;
   adderValue: number;
+  key: number;
+  id: number;
 }
 
-const ComponenteHijo: FC<Props> = ({ texto, adderValue }) => {
+const deleteComponent = (id: number): void => {
+  console.log(`Componente ${id} eliminado... o no`);
+};
+
+const ComponenteHijo: FC<Props> = ({ texto, adderValue, id }) => {
   console.log(`${texto} Renderizado`);
 
   const [state, setState] = useState<number>(0);
@@ -20,10 +26,7 @@ const ComponenteHijo: FC<Props> = ({ texto, adderValue }) => {
       >
         +{adderValue}
       </button>
-      <button
-        className="boton botonRemove"
-        onClick={() => console.log("Borrar Contador")}
-      >
+      <button className="boton botonRemove" onClick={() => deleteComponent(id)}>
         Eliminar
       </button>
     </div>
