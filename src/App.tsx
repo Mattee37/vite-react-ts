@@ -1,37 +1,13 @@
 import React, { FC, useState } from "react";
-import styled from "@emotion/styled";
 import "./App.css";
+
+import Components from "./types/types";
 
 import ComponenteHijo from "./components/ComponenteHijo";
 import Encabezado from "./components/Encabezado";
 
-import Components from "./types/types";
-
-const StyledButton = styled.button`
-  grid-column: span 3;
-  width: 31.6%;
-  align-self: center;
-  justify-self: center;
-  background: rgb(5, 36, 214);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-  margin-top: 10px;
-  padding: 10px;
-  transition: 0.3s ease all;
-
-  &:hover {
-    background: rgb(0, 18, 119);
-  }
-`;
-
-const Message = styled.span`
-  font-size: 30px;
-  grid-column: span 3;
-  align-self: center;
-  justify-self: center;
-`;
+import StyledButton from "./components/ui/StyledButton";
+import Message from "./components/ui/Message";
 
 const App: FC = () => {
   console.log("App renderizada");
