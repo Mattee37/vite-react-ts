@@ -5,12 +5,7 @@ import "./App.css";
 import ComponenteHijo from "./components/ComponenteHijo";
 import Encabezado from "./components/Encabezado";
 
-interface Components {
-  texto: string;
-  adderValue: number;
-  key: number;
-  id: number;
-}
+import Components from "./types/types";
 
 const StyledButton = styled.button`
   grid-column: span 3;

@@ -1,11 +1,6 @@
 import React, { FC, useState } from "react";
 
-interface Props {
-  texto: string;
-  adderValue: number;
-  key: number;
-  id: number;
-}
+import Props from "../types/types";
 
 const deleteComponent = (id: number): void => {
   console.log(`Componente ${id} eliminado... o no`);
