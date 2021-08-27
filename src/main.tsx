@@ -1,16 +1,12 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
-import PropagateLoader from "react-spinners/PropagateLoader";
+import Spinner from "./components/Spinner";
 
 const App = lazy(() => import("./App"));
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense
-      fallback={
-        <PropagateLoader color={"#3c1fdf"} loading={true} css={""} size={15} />
-      }
-    >
+    <Suspense fallback={<Spinner />}>
       <App />
     </Suspense>
   </React.StrictMode>,
