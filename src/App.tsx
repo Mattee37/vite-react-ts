@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 
 import Components from "./types/types";
 

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import logo from "../logo.svg";
+import logo from "../assets/logo.svg";
 
 const Encabezado: FC = () => {
   console.log("Encabezado Renderizado");

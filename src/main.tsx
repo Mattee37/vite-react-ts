@@ -1,10 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import PropagateLoader from "react-spinners/PropagateLoader";
+
+const App = lazy(() => import("./App"));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense
+      fallback={
+        <PropagateLoader color={"#3c1fdf"} loading={true} css={""} size={15} />
+      }
+    >
+      <App />
+    </Suspense>
   </React.StrictMode>,
   document.getElementById("root")
 );
