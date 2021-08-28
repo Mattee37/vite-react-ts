@@ -1,14 +1,26 @@
-import React, { FC, useContext } from "react";
-
-import CounterContext from "../context/store";
+import React, { FC, useState } from "react";
 
 import Counter from "./Counter";
+
+import { Components } from "../types/types";
 
 import Message from "./ui/Message";
 import StyledButton from "./ui/StyledButton";
 
 const CounterList: FC = () => {
-  const { counter, addCounter } = useContext(CounterContext);
+  const [counter, setCounter] = useState<Array<Components>>([]);
+
+  const addCounter = () => {
+    const randomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+    const arrayLength = counter.length + 1;
+    setCounter(
+      counter.concat({
+        texto: `Contador ${arrayLength}`,
+        adderValue: randomNumber,
+        key: arrayLength,
+      })
+    );
+  };
   console.log(counter);
   console.log("App renderizada");
 
