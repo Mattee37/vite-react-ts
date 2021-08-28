@@ -1,13 +1,15 @@
-export default interface Components {
+export interface Components {
   texto: string;
   adderValue: number;
   key: number;
-  id: number;
 }
 
-export default interface Props {
-  texto: string;
-  adderValue: number;
-  key: number;
-  id: number;
+export interface Props {
+  children: React.ReactNode;
+}
+
+export interface ContextValue {
+  counter: Array<Components>;
+  addCounter: Function;
+  deleteCounter: Function;
 }

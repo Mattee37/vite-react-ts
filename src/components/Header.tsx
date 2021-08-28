@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import logo from "../assets/logo.svg";
 
-const Encabezado: FC = () => {
+const Header: FC = () => {
   console.log("Encabezado Renderizado");
   return (
     <div className="encabezado">
@@ -12,4 +12,4 @@ const Encabezado: FC = () => {
   );
 };
 
-export default React.memo(Encabezado);
+export default React.memo(Header);

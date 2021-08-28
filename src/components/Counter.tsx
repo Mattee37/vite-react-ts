@@ -1,14 +1,9 @@
 import React, { FC, useState } from "react";
 
-import Props from "../types/types";
+import { Components } from "../types/types";
 
-const deleteComponent = (id: number): void => {
-  console.log(`Componente ${id} eliminado... o no`);
-};
-
-const ComponenteHijo: FC<Props> = ({ texto, adderValue, id }) => {
+const Counter: FC<Components> = ({ texto, adderValue }) => {
   console.log(`${texto} Renderizado`);
-
   const [state, setState] = useState<number>(0);
 
   return (
@@ -21,11 +16,8 @@ const ComponenteHijo: FC<Props> = ({ texto, adderValue, id }) => {
       >
         +{adderValue}
       </button>
-      <button className="boton botonRemove" onClick={() => deleteComponent(id)}>
-        Eliminar
-      </button>
     </div>
   );
 };
 
-export default React.memo(ComponenteHijo);
+export default React.memo(Counter);
