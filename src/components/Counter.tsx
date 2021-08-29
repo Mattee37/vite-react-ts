@@ -16,6 +16,12 @@ const Counter: FC<Components> = ({ texto, adderValue }) => {
       >
         +{adderValue}
       </button>
+      <button
+        className="boton botonRemove"
+        onClick={() => console.log("Elinimando...")}
+      >
+        Eliminar
+      </button>
     </div>
   );
 };
