@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "@emotion/styled";
 
-import PropagateLoader from "react-spinners/PropagateLoader";
+import FadeLoader from "react-spinners/FadeLoader";
 
 const CenterSpinner = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const CenterSpinner = styled.div`
 const Spinner: FC = () => {
   return (
     <CenterSpinner>
-      <PropagateLoader color={"white"} loading={true} size={15} />
+      <FadeLoader color={"white"} loading={true} height={15} />
     </CenterSpinner>
   );
 };
