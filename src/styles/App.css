@@ -17,6 +17,10 @@ body {
   pointer-events: none;
 }
 
+.headerText {
+  color: white;
+}
+
 .grid {
   display: grid;
   max-width: 800px;

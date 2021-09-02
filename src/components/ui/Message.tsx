@@ -5,6 +5,7 @@ const Message = styled.span`
   grid-column: span 3;
   align-self: center;
   justify-self: center;
+  color: white;
 `;
 
 export default Message;

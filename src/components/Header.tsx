@@ -6,8 +6,7 @@ const Header: FC = () => {
   return (
     <div className="encabezado">
       <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React!</p>
-      <h1>Contadores</h1>
+      <h1 className="headerText">Contadores</h1>
     </div>
   );
 };
