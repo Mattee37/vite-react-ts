@@ -1,35 +1,28 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { Store } from "../types";
+import { addCounter } from "../store/actions";
 
 import Counter from "./Counter";
-
-import { Components } from "../types/types";
 
 import Message from "./ui/Message";
 import StyledButton from "./ui/StyledButton";
 
 const CounterList: FC = () => {
-  const [counter, setCounter] = useState<Array<Components>>([]);
-
-  const addCounter = () => {
-    const randomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
-    const arrayLength = counter.length + 1;
-    setCounter(
-      counter.concat({
-        texto: `Contador ${arrayLength}`,
-        adderValue: randomNumber,
-        key: arrayLength,
-      })
-    );
-  };
-  console.log(counter);
+  const counters = useSelector((state: Store) => state.counters);
+  const dispatch = useDispatch();
+  console.log(counters);
   console.log("App renderizada");
 
   return (
     <>
-      <StyledButton onClick={addCounter}>Agregar contador!</StyledButton>
-      {counter.length !== 0 ? (
-        counter.map(({ texto, adderValue, key }) => (
-          <Counter texto={texto} adderValue={adderValue} key={key} />
+      <StyledButton onClick={() => dispatch(addCounter())}>
+        Agregar contador!
+      </StyledButton>
+      {counters.length !== 0 ? (
+        counters.map(({ texto, adderValue, id }) => (
+          <Counter texto={texto} adderValue={adderValue} id={id} key={id} />
         ))
       ) : (
         <Message>Aún no hay contadores!</Message>

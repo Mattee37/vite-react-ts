@@ -1,5 +1,7 @@
 import React, { FC } from "react";
-import "./styles/App.css";
+
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 import Header from "./components/Header";
 import CounterList from "./components/CounterList";
@@ -10,7 +12,9 @@ const App: FC = () => {
   return (
     <div className="grid">
       <Header />
-      <CounterList />
+      <Provider store={store}>
+        <CounterList />
+      </Provider>
     </div>
   );
 };
