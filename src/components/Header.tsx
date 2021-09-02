@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import logo from "../assets/logo.svg";
 
 const Header: FC = () => {
