@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { Store } from "../types";
-import { addCounter } from "../store/actions";
+import { addCounter } from "../redux/actions";
 
 import Counter from "./Counter";
 

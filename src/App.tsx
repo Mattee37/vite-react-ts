@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 import { Provider } from "react-redux";
-import store from "./store/store";
+import store from "./redux/store";
 
 import Header from "./components/Header";
 import CounterList from "./components/CounterList";
