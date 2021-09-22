@@ -9,7 +9,7 @@ const Header: FC = () => {
       <Suspense fallback={<div>Loading Image...</div>}>
         <ReactLogo className="App-logo" />
       </Suspense>
-      <h1 className="headerText">Contadores</h1>
+      <h1 className="headerText">Contadores!</h1>
     </div>
   );
 };
