@@ -1,19 +1,19 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { useSelector, useDispatch } from "react-redux";
-import { Store } from "../types";
-import { addCounter } from "../redux/actions";
+import { useSelector, useDispatch } from 'react-redux';
+import { Store } from '../types';
+import { addCounter } from '../redux/actions';
 
-import Counter from "./Counter";
+import Counter from './Counter';
 
-import Message from "./ui/Message";
-import StyledButton from "./ui/StyledButton";
+import Message from './ui/Message';
+import StyledButton from './ui/StyledButton';
 
 const CounterList: FC = () => {
   const counters = useSelector((state: Store) => state.counters);
   const dispatch = useDispatch();
   console.log(counters);
-  console.log("App renderizada");
+  console.log('App renderizada');
 
   return (
     <>

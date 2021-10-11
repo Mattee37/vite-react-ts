@@ -1,9 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState } from 'react';
 
-import { Component } from "../types";
+import { Component } from '../types';
 
-import { useDispatch } from "react-redux";
-import { deleteCounter } from "../redux/actions";
+import { useDispatch } from 'react-redux';
+import { deleteCounter } from '../redux/actions';
 
 const Counter: FC<Component> = ({ texto, adderValue, id }) => {
   const dispatch = useDispatch();

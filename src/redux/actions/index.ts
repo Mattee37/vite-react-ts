@@ -1,5 +1,5 @@
-import { DELETE_COUNTER, ADD_COUNTER, ActionTypes } from "../types";
-import { Component } from "../../types";
+import { DELETE_COUNTER, ADD_COUNTER, ActionTypes } from '../types';
+import { Component } from '../../types';
 
 export const addCounter = (): ActionTypes => ({ type: ADD_COUNTER });
 

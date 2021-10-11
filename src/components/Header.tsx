@@ -1,9 +1,9 @@
-import React, { FC, lazy, Suspense } from "react";
+import React, { FC, lazy, Suspense } from 'react';
 
-const ReactLogo = lazy(() => import("./ui/svg/ReactLogo"));
+const ReactLogo = lazy(() => import('./ui/svg/ReactLogo'));
 
 const Header: FC = () => {
-  console.log("Encabezado Renderizado");
+  console.log('Encabezado Renderizado');
   return (
     <div className="encabezado">
       <Suspense fallback={<div>Loading Image...</div>}>

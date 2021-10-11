@@ -1,6 +1,6 @@
-import { ActionTypes, ADD_COUNTER, DELETE_COUNTER } from "../types";
-import { Store } from "../../types";
-import { addCounterAction, deleteCounterAction } from "../actions";
+import { ActionTypes, ADD_COUNTER, DELETE_COUNTER } from '../types';
+import { Store } from '../../types';
+import { addCounterAction, deleteCounterAction } from '../actions';
 
 export function counterReducer(
   state: Store = {
