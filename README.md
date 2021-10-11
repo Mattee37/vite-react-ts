@@ -4,14 +4,14 @@ A simple React application made with Vite and TypeScript.
 
 ## Installation
 
-Use the package manager [pnpm](https://pnpm.io/installation) to install dependencis.
+Use the package manager NPM to install dependencis.
 
 ```bash
-pnpm install
+npm install
 ```
 
 ## Usage
 
 ```bash
-pnpm run dev
+npm run dev
 ```
