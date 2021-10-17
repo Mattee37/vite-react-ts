@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
 
+import { PersistGate } from 'redux-persist/integration/react';
+
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { store, persistor } from './redux/store';
 
 import Header from './components/Header';
 import CounterList from './components/CounterList';
+import Spinner from './components/Spinner';
 
 const App: FC = () => {
   console.log('App renderizada');
@@ -13,7 +16,9 @@ const App: FC = () => {
     <div className="grid">
       <Header />
       <Provider store={store}>
-        <CounterList />
+        <PersistGate loading={<Spinner />} persistor={persistor}>
+          <CounterList />
+        </PersistGate>
       </Provider>
     </div>
   );
