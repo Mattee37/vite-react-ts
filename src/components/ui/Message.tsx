@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 const Message = styled.span`
   font-size: 30px;
@@ -6,6 +6,6 @@ const Message = styled.span`
   align-self: center;
   justify-self: center;
   color: white;
-`;
+`
 
-export default Message;
+export default Message

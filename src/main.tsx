@@ -1,10 +1,11 @@
-import React, { lazy, Suspense } from 'react';
-import ReactDOM from 'react-dom';
-import Spinner from './components/Spinner';
+import React, { lazy, Suspense } from 'react'
+import ReactDOM from 'react-dom'
 
-import './styles/App.css';
+import Spinner from './components/Spinner'
 
-const App = lazy(() => import('./App'));
+import './styles/App.css'
+
+const App = lazy(() => import('./App'))
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,4 +14,4 @@ ReactDOM.render(
     </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)

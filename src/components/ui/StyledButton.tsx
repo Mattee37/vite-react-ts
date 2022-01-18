@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 const StyledButton = styled.button`
   grid-column: span 3;
@@ -17,6 +17,6 @@ const StyledButton = styled.button`
   &:hover {
     background: rgb(0, 18, 119);
   }
-`;
+`
 
-export default StyledButton;
+export default StyledButton

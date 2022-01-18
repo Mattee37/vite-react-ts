@@ -1,10 +1,12 @@
-import React, { SVGProps } from 'react';
+import type { SVGProps } from 'react'
+
+import { memo } from 'react'
 
 const ReactLogo = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 841.9 595.3"
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <g fill="#61DAFB">
@@ -12,7 +14,7 @@ const ReactLogo = (props: SVGProps<SVGSVGElement>) => {
         <circle cx={420.9} cy={296.5} r={45.7} />
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default React.memo(ReactLogo);
+export default memo(ReactLogo)

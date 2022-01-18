@@ -1,15 +1,15 @@
-import React, { FC, useState } from 'react';
+import type { Component } from '../types'
+import type { VFC } from 'react'
 
-import { Component } from '../types';
+import { memo, useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-import { useDispatch } from 'react-redux';
-import { deleteCounter } from '../redux/actions';
+import { deleteCounter } from '../redux/actions'
 
-const Counter: FC<Component> = ({ texto, adderValue, id }) => {
-  const dispatch = useDispatch();
+const Counter: VFC<Component> = ({ texto, adderValue, id }) => {
+  const dispatch = useDispatch()
 
-  console.log(`${texto} Renderizado`);
-  const [state, setState] = useState<number>(0);
+  const [state, setState] = useState<number>(0)
 
   return (
     <div className="caja">
@@ -28,7 +28,7 @@ const Counter: FC<Component> = ({ texto, adderValue, id }) => {
         Eliminar
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default React.memo(Counter);
+export default memo(Counter)

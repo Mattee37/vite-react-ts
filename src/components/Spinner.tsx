@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
-import styled from '@emotion/styled';
+import type { VFC } from 'react'
 
-import FadeLoader from 'react-spinners/FadeLoader';
+import { memo } from 'react'
+import styled from '@emotion/styled'
+import FadeLoader from 'react-spinners/FadeLoader'
 
 const CenterSpinner = styled.div`
   display: flex;
@@ -10,14 +11,14 @@ const CenterSpinner = styled.div`
   justify-content: center;
   height: 100vh;
   background-color: #2c3553;
-`;
+`
 
-const Spinner: FC = () => {
+const Spinner: VFC = () => {
   return (
     <CenterSpinner>
-      <FadeLoader color={'white'} loading={true} height={15} />
+      <FadeLoader color={'white'} height={15} loading={true} />
     </CenterSpinner>
-  );
-};
+  )
+}
 
-export default Spinner;
+export default memo(Spinner)

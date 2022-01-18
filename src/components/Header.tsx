@@ -1,9 +1,10 @@
-import React, { FC, lazy, Suspense } from 'react';
+import type { VFC } from 'react'
 
-const ReactLogo = lazy(() => import('./ui/svg/ReactLogo'));
+import { lazy, Suspense, memo } from 'react'
 
-const Header: FC = () => {
-  console.log('Encabezado Renderizado');
+const ReactLogo = lazy(() => import('./ui/svg/ReactLogo'))
+
+const Header: VFC = () => {
   return (
     <div className="encabezado">
       <Suspense fallback={<div>Loading Image...</div>}>
@@ -11,7 +12,7 @@ const Header: FC = () => {
       </Suspense>
       <h1 className="headerText">Contadores</h1>
     </div>
-  );
-};
+  )
+}
 
-export default React.memo(Header);
+export default memo(Header)

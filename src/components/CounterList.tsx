@@ -1,19 +1,18 @@
-import React, { FC } from 'react';
+import type { Store } from '../types'
+import type { VFC } from 'react'
 
-import { useSelector, useDispatch } from 'react-redux';
-import { Store } from '../types';
-import { addCounter } from '../redux/actions';
+import { memo } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-import Counter from './Counter';
+import { addCounter } from '../redux/actions'
 
-import Message from './ui/Message';
-import StyledButton from './ui/StyledButton';
+import Counter from './Counter'
+import Message from './ui/Message'
+import StyledButton from './ui/StyledButton'
 
-const CounterList: FC = () => {
-  const counters = useSelector((state: Store) => state.counters);
-  const dispatch = useDispatch();
-  console.log(counters);
-  console.log('App renderizada');
+const CounterList: VFC = () => {
+  const counters = useSelector((state: Store) => state.counters)
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -22,13 +21,13 @@ const CounterList: FC = () => {
       </StyledButton>
       {counters.length !== 0 ? (
         counters.map(({ texto, adderValue, id }) => (
-          <Counter texto={texto} adderValue={adderValue} id={id} key={id} />
+          <Counter key={id} adderValue={adderValue} id={id} texto={texto} />
         ))
       ) : (
         <Message>Aún no hay contadores!</Message>
       )}
     </>
-  );
-};
+  )
+}
 
-export default React.memo(CounterList);
+export default memo(CounterList)

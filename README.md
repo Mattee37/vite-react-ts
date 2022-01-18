@@ -15,7 +15,3 @@ npm install
 ```bash
 npm run dev
 ```
-
-## Prettier and ESLint configuration
-
-Use this [tool](https://github.com/paulolramos/eslint-prettier-airbnb-react) to set te configuration.
