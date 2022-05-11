@@ -17,14 +17,14 @@ const CounterList: VFC = () => {
   return (
     <>
       <StyledButton onClick={() => dispatch(addCounter())}>
-        Agregar contador!
+        Add counter!
       </StyledButton>
       {counters.length !== 0 ? (
-        counters.map(({ texto, adderValue, id }) => (
-          <Counter key={id} adderValue={adderValue} id={id} texto={texto} />
+        counters.map(({ text, value, id }) => (
+          <Counter key={id} id={id} text={text} value={value} />
         ))
       ) : (
-        <Message>Aún no hay contadores!</Message>
+        <Message>You dont have counters yet!</Message>
       )}
     </>
   )

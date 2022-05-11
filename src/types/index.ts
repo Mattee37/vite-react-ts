@@ -1,6 +1,6 @@
 export interface Component {
-  texto: string
-  adderValue: number
+  text: string
+  value: number
   id: number
 }
 

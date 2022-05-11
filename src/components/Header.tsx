@@ -10,7 +10,7 @@ const Header: VFC = () => {
       <Suspense fallback={<div>Loading Image...</div>}>
         <ReactLogo className="App-logo" />
       </Suspense>
-      <h1 className="headerText">Contadores</h1>
+      <h1 className="headerText">Counters</h1>
     </div>
   )
 }

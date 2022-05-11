@@ -1,25 +1,20 @@
 import type { Component } from '../types'
 import type { VFC } from 'react'
 
-import { memo, useState } from 'react'
+import { memo } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { deleteCounter } from '../redux/actions'
+import { deleteCounter, addValue } from '../redux/actions'
 
-const Counter: VFC<Component> = ({ texto, adderValue, id }) => {
+const Counter: VFC<Component> = ({ text, value, id }) => {
   const dispatch = useDispatch()
-
-  const [state, setState] = useState<number>(0)
 
   return (
     <div className="caja">
-      <p>{texto}</p>
-      <h1>{state}</h1>
-      <button
-        className="boton botonAdd"
-        onClick={() => setState(state + adderValue)}
-      >
-        +{adderValue}
+      <p>{text}</p>
+      <h1>{value}</h1>
+      <button className="boton botonAdd" onClick={() => dispatch(addValue(id))}>
+        +1
       </button>
       <button
         className="boton botonRemove"

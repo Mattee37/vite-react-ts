@@ -1,7 +1,11 @@
 import type { Store } from '../../types'
 
-import { ActionTypes, ADD_COUNTER, DELETE_COUNTER } from '../types'
-import { addCounterAction, deleteCounterAction } from '../actions'
+import { ActionTypes, ADD_COUNTER, DELETE_COUNTER, ADD_VALUE } from '../types'
+import {
+  addCounterAction,
+  deleteCounterAction,
+  addValueAction
+} from '../actions'
 
 export function counterReducer(
   state: Store = {
@@ -19,6 +23,11 @@ export function counterReducer(
       return {
         ...state,
         counters: addCounterAction(state.counters)
+      }
+    case ADD_VALUE:
+      return {
+        ...state,
+        counters: addValueAction(state.counters, action.payload)
       }
     default:
       return state
